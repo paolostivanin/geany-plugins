@@ -360,7 +360,7 @@ static GtkWidget *create_popup_menu(AoTasks *t)
 
 	menu = gtk_menu_new();
 
-	item = gtk_image_menu_item_new_from_stock(GTK_STOCK_DELETE, NULL);
+	item = ao_image_menu_item_new("edit-delete", NULL);
 	priv->popup_menu_delete_button = item;
 	gtk_widget_show(item);
 	gtk_container_add(GTK_CONTAINER(menu), item);
@@ -370,7 +370,7 @@ static GtkWidget *create_popup_menu(AoTasks *t)
 	gtk_widget_show(item);
 	gtk_container_add(GTK_CONTAINER(menu), item);
 
-	item = ui_image_menu_item_new(GTK_STOCK_REFRESH, _("_Update"));
+	item = ao_image_menu_item_new("view-refresh", _("_Update"));
 	gtk_widget_show(item);
 	gtk_container_add(GTK_CONTAINER(menu), item);
 	g_signal_connect(item, "activate", G_CALLBACK(popup_update_item_click_cb), t);

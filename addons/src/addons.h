@@ -30,6 +30,6 @@ extern GeanyPlugin		*geany_plugin;
 extern GeanyData		*geany_data;
 extern GeanyFunctions	*geany_functions;
 
-GtkWidget *ao_image_menu_item_new(const gchar *stock_id, const gchar *label);
+GtkWidget *ao_image_menu_item_new(const gchar *icon_name, const gchar *label);
 
 #endif

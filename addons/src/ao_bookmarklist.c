@@ -304,7 +304,7 @@ static GtkWidget *create_popup_menu(AoBookmarkList *bm)
 
 	menu = gtk_menu_new();
 
-	item = ui_image_menu_item_new(GTK_STOCK_DELETE, _("_Remove Bookmark"));
+	item = ui_image_menu_item_new("edit-delete", _("_Remove Bookmark"));
 	gtk_widget_show(item);
 	gtk_container_add(GTK_CONTAINER(menu), item);
 	g_signal_connect(item, "activate", G_CALLBACK(popup_item_click_cb), bm);

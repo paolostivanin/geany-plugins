@@ -53,8 +53,8 @@ void ao_xmltagging(void)
 
 		dialog = gtk_dialog_new_with_buttons(_("XML tagging"),
 							 GTK_WINDOW(geany->main_widgets->window),
-							 GTK_DIALOG_DESTROY_WITH_PARENT, GTK_STOCK_CANCEL,
-							 GTK_RESPONSE_CANCEL, GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+							 GTK_DIALOG_DESTROY_WITH_PARENT, _("_Cancel"),
+							 GTK_RESPONSE_CANCEL, _("_OK"), GTK_RESPONSE_ACCEPT,
 							 NULL);
 		vbox = ui_dialog_vbox_new(GTK_DIALOG(dialog));
 		gtk_widget_set_name(dialog, "GeanyDialog");
@@ -70,7 +70,13 @@ void ao_xmltagging(void)
 
 		gtk_container_add(GTK_CONTAINER(hbox), label);
 		gtk_container_add(GTK_CONTAINER(hbox), textbox);
+
+#if GTK_CHECK_VERSION(3, 16, 0)
+        gtk_label_set_xalign(GTK_LABEL(label), 0.0);
+        gtk_label_set_yalign(GTK_LABEL(label), 0.5);
+#else
 		gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+#endif
 
 		gtk_container_add(GTK_CONTAINER(vbox), hbox);
 		gtk_container_add(GTK_CONTAINER(vbox), textline);
